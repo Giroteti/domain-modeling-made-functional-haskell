@@ -14,7 +14,7 @@ createWidgetCode _ = Left "L'identifiant de Widget n'est pas valide"
 
 createGizmoCode :: String -> Either String ProductCode
 createGizmoCode s@('G':a:b:c:d:rest)
-  | all isDigit [a,b,c,d]  && null rest = Right (WidgetCode s)
+  | all isDigit [a,b,c,d]  && null rest = Right (GizmoCode s)
 createGizmoCode _ = Left "L'identifiant de Gizmo n'est pas valide"
 
 value :: ProductCode -> String
